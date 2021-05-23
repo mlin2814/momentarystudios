@@ -45,34 +45,21 @@
         display: block;
         text-align: left;
     }
-    
 }
 
-/* .carousel-item {
-    height: 500px;
-    width: 500px;
-} */
 #myCarousel {
     width: 50%;
-    /* height: 20%; */
-    /* height: auto; */
     margin: auto;
     padding: 5px;
 }
 
-.carousel-inner {
-    align-content: stretch;
-}
-
 .item {
     height: 600px;
-    /* align-content: stretch; */
 }
 
 .item img {
     width: 100%;
     height: auto;
-    /* object-fit: cover; */
 }
 
 .welcome-message {
@@ -81,14 +68,6 @@
     width: 50%;
     text-align: center;
 }
-
-/* .information { */
-    /* display: inline-block; */
-    /* float: left; */
-    /* align-self: center; */
-    /* width: 50%; */
-/* } */
-
 
 #personal-info {
     float: left;
@@ -113,7 +92,6 @@
 }
 
 #planned-events-places {
-    /* width: 80%; */
     text-align: center;
     margin: 4px;
     padding: 3px;
@@ -134,7 +112,6 @@
 #contact-form {
     float: left;
     width: 50%;
-    /* text-align: center; */
     margin: auto;
     clear: both;
     padding-left: 10%;
@@ -145,14 +122,9 @@
     clear: both;
 }
 
-/* #submit {
-    width: 30%;
-} */
-
 #external-links {
     float: right;
     width: 50%;
-    /* align-content: center; */
     margin: auto;
     text-align: center;
     padding: 5px;

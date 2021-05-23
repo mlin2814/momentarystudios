@@ -23,23 +23,18 @@
     <section class="contact-methods">
         <div id="contact-form">
             <h1>Contact Form</h1>
-            <form action="http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php" method="post" id="input-form">
-            <!-- <form> -->
-                <!-- <fieldset> -->
-                    <label>Name:
-                        <input type="text" name="name" id="name">
-                    </label>
-                    <br />
-                    <label>Email:
-                        <input type="email" name="email" id="email">
-                    </label>
-                    <br />
-                    <label>Comment:</label>
-                    <br />
-                    <textarea name="comment" id="comment" cols="50" rows="10"></textarea>
-                    <!-- <br /> -->
-                    
-                <!-- </fieldset> -->
+            <form>
+                <label>Name:
+                    <input type="text" name="name" id="name">
+                </label>
+                <br />
+                <label>Email:
+                    <input type="email" name="email" id="email">
+                </label>
+                <br />
+                <label>Comment:</label>
+                <br />
+                <textarea name="comment" id="comment" cols="50" rows="10"></textarea>
             </form>
             <button type="submit" form="input-form" id="submit" value="Submit Form">Submit Form</button>
         </div>
@@ -64,8 +59,16 @@
     </section>
     
 
-    <!-- <script src="script.js"></script> -->
     <script>
+        function collapse() {
+            let nav = document.getElementById("nav-bar");
+            if (nav.className === "nav-bar") {
+                nav.className += " responsive";
+            } else {
+                nav.className = "nav-bar";
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', sendForm);
 
         function sendForm() {
@@ -77,21 +80,18 @@
                 payload.email = document.getElementById('email').value 
                 payload.comment = document.getElementById('comment').value 
 
-                // console.log(payload)
 
                 req.open('POST', 'http://httpbin.org/post', true)
                 req.setRequestHeader('Content-Type', 'application/json')
                 req.addEventListener('load', function() {
                     if(req.status >= 200 && req.status < 400){
                         var response = JSON.parse(req.responseText);
-                        // document.getElementById('enteredText').textContent = payload;
                         console.log(response)
                     } else {
                         console.log("Error in network request: " + req.statusText);
                     }});
                     req.send(JSON.stringify(payload));
                     event.preventDefault();
-                // })
             })
         }
     </script>
